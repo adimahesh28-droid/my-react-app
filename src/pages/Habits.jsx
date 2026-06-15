@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
-import { TaskInput, card, yellowBubble, purpleBubble, fredoka, P, PS, G, BG, WH } from '../components/ui'
+import { TaskInput, card, yellowBubble, purpleBubble, fredoka, P, G } from '../components/ui'
 
-const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
 function getLastNDays(n) {
   return Array.from({ length: n }, (_, i) => {
@@ -12,16 +12,31 @@ function getLastNDays(n) {
   })
 }
 
+function getMonthDays(year, month) {
+  // month: 0-11
+  const daysInMonth = new Date(year, month + 1, 0).getDate()
+  return Array.from({ length: daysInMonth }, (_, i) => {
+    const d = new Date(year, month, i + 1)
+    return d.toISOString().split('T')[0]
+  })
+}
+
 export default function Habits({ session }) {
   const userId   = session.user.id
   const today    = new Date().toISOString().split('T')[0]
   const last7    = getLastNDays(7)
+
+  const now = new Date()
+  const [viewYear,  setViewYear]  = useState(now.getFullYear())
+  const [viewMonth, setViewMonth] = useState(now.getMonth()) // 0-11
+  const monthDays = getMonthDays(viewYear, viewMonth)
 
   const [habits,    setHabits]    = useState([])
   const [logMap,    setLogMap]    = useState({}) // `${habitId}_${date}` → bool
   const [loading,   setLoading]   = useState(true)
 
   useEffect(() => { loadAll() }, [])
+  useEffect(() => { loadMonthLogs() }, [viewYear, viewMonth])
 
   async function loadAll() {
     setLoading(true)
@@ -32,8 +47,19 @@ export default function Habits({ session }) {
     setHabits(hData || [])
     const map = {}
     ;(lData || []).forEach(l => { map[`${l.habit_id}_${l.log_date}`] = l.done })
-    setLogMap(map)
+    setLogMap(prev => ({ ...prev, ...map }))
     setLoading(false)
+  }
+
+  async function loadMonthLogs() {
+    const start = monthDays[0]
+    const end   = monthDays[monthDays.length - 1]
+    const { data: lData } = await supabase
+      .from('habit_logs').select('*').eq('user_id', userId)
+      .gte('log_date', start).lte('log_date', end)
+    const map = {}
+    ;(lData || []).forEach(l => { map[`${l.habit_id}_${l.log_date}`] = l.done })
+    setLogMap(prev => ({ ...prev, ...map }))
   }
 
   async function addHabit(name) {
@@ -59,6 +85,16 @@ export default function Habits({ session }) {
     }
   }
 
+  function prevMonth() {
+    if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1) }
+    else setViewMonth(m => m - 1)
+  }
+
+  function nextMonth() {
+    if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1) }
+    else setViewMonth(m => m + 1)
+  }
+
   if (loading) return <div style={{ ...fredoka, fontSize: 20, color: P, padding: '3rem', textAlign: 'center' }}>Loading habits...</div>
 
   return (
@@ -75,15 +111,11 @@ export default function Habits({ session }) {
       )}
 
       {habits.map(h => {
-        const weekDone = last7.filter(date => logMap[`${h.id}_${date}`]).length
         return (
           <div key={h.id} style={card}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <span style={{ ...purpleBubble(18), color: P, textShadow: 'none' }}>{h.name}</span>
-                <span style={{ background: PS, color: P, borderRadius: 10, padding: '3px 10px', ...fredoka, fontSize: 13 }}>
-                  {weekDone}/7 this week
-                </span>
               </div>
               <button onClick={() => removeHabit(h.id)} style={{
                 background: 'none', border: `2px solid #C5C3E8`, borderRadius: 8,
@@ -91,31 +123,51 @@ export default function Habits({ session }) {
               }}>Remove</button>
             </div>
 
-            <div style={{ display: 'flex', gap: 10 }}>
-              {last7.map(date => {
-                const done    = logMap[`${h.id}_${date}`]
-                const isToday = date === today
-                const label   = DAYS[new Date(date).getDay()]
-                return (
-                  <div key={date} onClick={() => toggleHabit(h.id, date)} style={{ flex: 1, textAlign: 'center', cursor: 'pointer' }}>
-                    <div style={{ ...fredoka, fontSize: 11, color: isToday ? P : '#8885CC', fontWeight: isToday ? 'bold' : 'normal', marginBottom: 6 }}>{label}</div>
-                    <div style={{
-                      width: '100%', paddingTop: '100%', borderRadius: 10, position: 'relative',
-                      background: done ? P : BG,
-                      border: `2.5px solid ${done ? P : isToday ? P : '#C5C3E8'}`,
-                      boxShadow: done ? '2px 2px 0 #1A1560' : '2px 2px 0 #C5C3E8',
-                      transition: 'all .15s',
-                    }}>
-                      {done && (
-                        <svg style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} width="14" height="11" viewBox="0 0 14 11">
-                          <path d="M1 5.5l4 4 8-8" stroke="#fff" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
+            {/* Monthly heatmap */}
+            <div style={{ paddingTop: 0 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+                <span style={{ ...fredoka, fontSize: 13, color: '#8885CC' }}>{MONTHS[viewMonth]} {viewYear}</span>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <button onClick={prevMonth} style={{
+                    background: 'none', border: `2px solid #C5C3E8`, borderRadius: 6,
+                    cursor: 'pointer', color: '#8885CC', ...fredoka, fontSize: 12, padding: '2px 8px',
+                  }}>‹</button>
+                  <button onClick={nextMonth} style={{
+                    background: 'none', border: `2px solid #C5C3E8`, borderRadius: 6,
+                    cursor: 'pointer', color: '#8885CC', ...fredoka, fontSize: 12, padding: '2px 8px',
+                  }}>›</button>
+                </div>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 6, maxWidth: 280 }}>
+                {Array.from({ length: new Date(viewYear, viewMonth, 1).getDay() }).map((_, i) => (
+                  <div key={`pad_${i}`} />
+                ))}
+                {monthDays.map(date => {
+                  const done    = logMap[`${h.id}_${date}`]
+                  const isToday = date === today
+                  const dayNum  = new Date(date).getDate()
+                  return (
+                    <div
+                      key={date}
+                      onClick={() => toggleHabit(h.id, date)}
+                      title={date}
+                      style={{
+                        width: '100%', paddingTop: '100%', borderRadius: 5, position: 'relative', cursor: 'pointer',
+                        background: done ? G : '#ECEEFE',
+                        border: isToday ? `2px solid ${P}` : '2px solid transparent',
+                        boxSizing: 'border-box',
+                      }}
+                    >
+                      <span style={{
+                        position: 'absolute', top: 1, left: 2, fontSize: 8,
+                        ...fredoka, color: done ? '#fff' : '#B0AEDE',
+                      }}>{dayNum}</span>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
+
           </div>
         )
       })}
