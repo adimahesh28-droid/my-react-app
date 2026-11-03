@@ -46,7 +46,7 @@ export default function Layout({ children, session }) {
           <button onClick={() => navigate('/habits')} style={navBtn('/habits')}>Habits</button>
           <button onClick={() => navigate('/gate-prep')} style={navBtn('/gate-prep')}>GATE Prep 🎯</button>
           <button onClick={() => navigate('/cat-prep')} style={navBtn('/cat-prep')}>CAT Prep 🎯</button>
-          <button onClick={() => navigate('/dsa-prep')} style={navBtn('/dsa-prep')}>DSA Sheet 💻</button>
+          <button onClick={() => navigate('/gate-mountain')} style={navBtn('/gate-mountain')}>GATE Mountain 🏔️</button>
 
           {/* Spacer */}
           <div style={{ flex: 1 }} />

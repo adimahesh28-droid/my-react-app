@@ -7,7 +7,7 @@ import Calendar from './pages/Calendar'
 import Habits from './pages/Habits'
 import GatePrep from './pages/GatePrep'
 import CatPrep from './pages/CatPrep'
-import DSAPrep from './pages/DSAPrep'
+import GateMountain from './pages/GateMountain'
 import Layout from './components/Layout'
 
 export default function App() {
@@ -47,7 +47,8 @@ export default function App() {
         <Route path="/habits" element={<Habits session={session} />} />
         <Route path="/gate-prep" element={<GatePrep session={session} />} />
         <Route path="/cat-prep" element={<CatPrep session={session} />} />
-        <Route path="/dsa-prep" element={<DSAPrep session={session} />} />
+        <Route path="/gate-mountain" element={<GateMountain session={session} />} />
+        <Route path="/dsa-prep" element={<Navigate to="/gate-mountain" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Layout>

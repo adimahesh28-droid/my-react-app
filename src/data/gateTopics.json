@@ -1,0 +1,2359 @@
+[
+  {
+    "id": "discrete-mathematics",
+    "name": "Discrete Mathematics",
+    "syllabusGroup": "Engineering Mathematics",
+    "groups": [
+      {
+        "id": "propositional-logic",
+        "name": "Propositional Logic",
+        "topics": [
+          "Propositions and logical statements",
+          "Logical connectives",
+          "Negation",
+          "Conjunction",
+          "Disjunction",
+          "Implication",
+          "Biconditional",
+          "Truth tables",
+          "Tautology",
+          "Contradiction",
+          "Contingency",
+          "Logical equivalence",
+          "Laws of propositional logic",
+          "De Morgan's laws",
+          "Converse, inverse and contrapositive",
+          "Logical arguments",
+          "Validity of arguments",
+          "Normal forms",
+          "Conjunctive Normal Form (CNF)",
+          "Disjunctive Normal Form (DNF)",
+          "Principal CNF and DNF"
+        ]
+      },
+      {
+        "id": "first-order-logic",
+        "name": "First-Order Logic",
+        "topics": [
+          "Predicates",
+          "Propositional functions",
+          "Universal quantifier",
+          "Existential quantifier",
+          "Nested quantifiers",
+          "Negation of quantified statements",
+          "Scope of quantifiers",
+          "Translating statements into predicate logic",
+          "Validity and equivalence of quantified expressions"
+        ]
+      },
+      {
+        "id": "sets",
+        "name": "Sets",
+        "topics": [
+          "Set representation",
+          "Types of sets",
+          "Subsets and proper subsets",
+          "Power sets",
+          "Cartesian products",
+          "Union, intersection and difference",
+          "Complement of sets",
+          "Set identities",
+          "De Morgan's laws for sets",
+          "Inclusion-exclusion principle"
+        ]
+      },
+      {
+        "id": "relations",
+        "name": "Relations",
+        "topics": [
+          "Binary relations",
+          "Representation of relations",
+          "Reflexive relations",
+          "Irreflexive relations",
+          "Symmetric relations",
+          "Antisymmetric relations",
+          "Transitive relations",
+          "Equivalence relations",
+          "Equivalence classes",
+          "Partitions",
+          "Closures of relations",
+          "Composition of relations",
+          "Inverse relations",
+          "Matrix representation of relations"
+        ]
+      },
+      {
+        "id": "functions",
+        "name": "Functions",
+        "topics": [
+          "Domain, codomain and range",
+          "Injective functions",
+          "Surjective functions",
+          "Bijective functions",
+          "One-to-one correspondence",
+          "Composition of functions",
+          "Inverse functions",
+          "Function restrictions",
+          "Pigeonhole principle and applications"
+        ]
+      },
+      {
+        "id": "partial-orders-and-lattices",
+        "name": "Partial Orders and Lattices",
+        "topics": [
+          "Partially ordered sets",
+          "Posets",
+          "Comparable and incomparable elements",
+          "Hasse diagrams",
+          "Minimal and maximal elements",
+          "Least and greatest elements",
+          "Upper and lower bounds",
+          "Supremum and infimum",
+          "Well-ordered sets",
+          "Lattices",
+          "Bounded lattices",
+          "Complemented lattices",
+          "Distributive lattices"
+        ]
+      },
+      {
+        "id": "algebraic-structures",
+        "name": "Algebraic Structures",
+        "topics": [
+          "Binary operations",
+          "Closure",
+          "Associativity",
+          "Commutativity",
+          "Identity elements",
+          "Inverse elements",
+          "Semigroups",
+          "Monoids",
+          "Groups",
+          "Abelian groups",
+          "Subgroups",
+          "Group properties",
+          "Cyclic groups"
+        ]
+      },
+      {
+        "id": "graph-theory",
+        "name": "Graph Theory",
+        "topics": [
+          "Graph terminology",
+          "Directed and undirected graphs",
+          "Simple graphs and multigraphs",
+          "Weighted graphs",
+          "Degree of a vertex",
+          "In-degree and out-degree",
+          "Handshaking lemma",
+          "Walks, trails and paths",
+          "Cycles and circuits",
+          "Connected graphs",
+          "Connected components",
+          "Strongly connected graphs",
+          "Graph representation",
+          "Adjacency matrix",
+          "Adjacency list",
+          "Incidence matrix",
+          "Complete graphs",
+          "Bipartite graphs",
+          "Regular graphs",
+          "Subgraphs",
+          "Complement of a graph",
+          "Isomorphic graphs",
+          "Euler paths and circuits",
+          "Hamiltonian paths and cycles",
+          "Trees and spanning trees",
+          "Connectivity and vertex cuts",
+          "Bridges and articulation points",
+          "Graph matching",
+          "Perfect matching",
+          "Hall's theorem",
+          "Graph colouring",
+          "Chromatic number",
+          "Planar graphs",
+          "Basic properties of planar graphs"
+        ]
+      },
+      {
+        "id": "combinatorics-and-counting",
+        "name": "Combinatorics and Counting",
+        "topics": [
+          "Fundamental counting principles",
+          "Sum rule",
+          "Product rule",
+          "Permutations",
+          "Combinations",
+          "Permutations with repetition",
+          "Combinations with repetition",
+          "Circular permutations",
+          "Restricted arrangements",
+          "Binomial theorem",
+          "Binomial coefficients",
+          "Pascal's identity",
+          "Pigeonhole principle",
+          "Inclusion-exclusion principle",
+          "Derangements",
+          "Counting using complementary cases"
+        ]
+      },
+      {
+        "id": "recurrence-relations",
+        "name": "Recurrence Relations",
+        "topics": [
+          "Introduction to recurrence relations",
+          "Linear recurrence relations",
+          "Homogeneous recurrence relations",
+          "Non-homogeneous recurrence relations",
+          "Solving recurrence relations",
+          "Characteristic equations",
+          "Initial conditions",
+          "Recurrence relation modelling",
+          "Divide-and-conquer recurrences"
+        ]
+      },
+      {
+        "id": "generating-functions",
+        "name": "Generating Functions",
+        "topics": [
+          "Ordinary generating functions",
+          "Constructing generating functions",
+          "Coefficient extraction",
+          "Generating functions for standard sequences",
+          "Applications to counting",
+          "Solving recurrence relations using generating functions"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "engineering-mathematics",
+    "name": "Engineering Mathematics",
+    "syllabusGroup": "Engineering Mathematics",
+    "groups": [
+      {
+        "id": "linear-algebra",
+        "name": "Linear Algebra",
+        "topics": [
+          "Scalars, vectors and matrices",
+          "Types of matrices",
+          "Matrix operations",
+          "Matrix addition and multiplication",
+          "Transpose of a matrix",
+          "Symmetric and skew-symmetric matrices",
+          "Determinants",
+          "Properties of determinants",
+          "Minors and cofactors",
+          "Adjoint of a matrix",
+          "Inverse of a matrix",
+          "Rank of a matrix",
+          "Elementary row operations",
+          "Row echelon form",
+          "Reduced row echelon form",
+          "System of linear equations",
+          "Consistency of linear systems",
+          "Homogeneous and non-homogeneous systems",
+          "Gaussian elimination",
+          "LU decomposition",
+          "Eigenvalues",
+          "Eigenvectors",
+          "Characteristic polynomial",
+          "Characteristic equation",
+          "Diagonalization",
+          "Properties of eigenvalues and eigenvectors"
+        ]
+      },
+      {
+        "id": "calculus",
+        "name": "Calculus",
+        "topics": [
+          "Functions and their graphs",
+          "Limits",
+          "Left-hand and right-hand limits",
+          "Continuity",
+          "Differentiability",
+          "Derivatives",
+          "Rules of differentiation",
+          "Chain rule",
+          "Higher-order derivatives",
+          "Increasing and decreasing functions",
+          "Local maxima and minima",
+          "Critical points",
+          "First derivative test",
+          "Second derivative test",
+          "Mean Value Theorem",
+          "Rolle's Theorem",
+          "Taylor and Maclaurin expansion, where relevant to problem-solving",
+          "Indefinite integration",
+          "Definite integration",
+          "Properties of definite integrals",
+          "Integration techniques",
+          "Area under curves"
+        ]
+      },
+      {
+        "id": "probability",
+        "name": "Probability",
+        "topics": [
+          "Basic probability concepts",
+          "Sample spaces and events",
+          "Addition theorem",
+          "Multiplication theorem",
+          "Conditional probability",
+          "Independent events",
+          "Bayes' theorem",
+          "Total probability theorem",
+          "Random variables",
+          "Discrete random variables",
+          "Continuous random variables",
+          "Probability mass functions",
+          "Probability density functions",
+          "Cumulative distribution functions",
+          "Expectation",
+          "Variance",
+          "Standard deviation",
+          "Moments",
+          "Joint distributions",
+          "Marginal distributions",
+          "Conditional distributions",
+          "Covariance",
+          "Correlation"
+        ]
+      },
+      {
+        "id": "probability-distributions",
+        "name": "Probability Distributions",
+        "topics": [
+          "Discrete uniform distribution",
+          "Binomial distribution",
+          "Poisson distribution",
+          "Continuous uniform distribution",
+          "Normal distribution",
+          "Exponential distribution",
+          "Mean and variance of standard distributions",
+          "Standardization of normal variables",
+          "Identifying an appropriate distribution",
+          "Distribution-based numerical problems"
+        ]
+      },
+      {
+        "id": "statistics",
+        "name": "Statistics",
+        "topics": [
+          "Mean",
+          "Median",
+          "Mode",
+          "Range",
+          "Variance",
+          "Standard deviation",
+          "Quartiles",
+          "Basic data interpretation",
+          "Statistical properties of distributions"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "digital-logic",
+    "name": "Digital Logic",
+    "syllabusGroup": "Digital Logic",
+    "groups": [
+      {
+        "id": "number-systems",
+        "name": "Number Systems",
+        "topics": [
+          "Decimal number system",
+          "Binary number system",
+          "Octal number system",
+          "Hexadecimal number system",
+          "Base conversions",
+          "Binary arithmetic",
+          "Signed and unsigned numbers",
+          "Sign-magnitude representation",
+          "1's complement",
+          "2's complement",
+          "Range of representable numbers",
+          "Overflow and underflow",
+          "Fixed-point representation",
+          "Floating-point representation",
+          "IEEE floating-point representation",
+          "Normalization of floating-point numbers",
+          "Floating-point precision and rounding"
+        ]
+      },
+      {
+        "id": "boolean-algebra",
+        "name": "Boolean Algebra",
+        "topics": [
+          "Boolean variables and constants",
+          "Boolean operators",
+          "Boolean expressions",
+          "Boolean algebra laws",
+          "Identity and null laws",
+          "Idempotent laws",
+          "Complement laws",
+          "Absorption laws",
+          "De Morgan's laws",
+          "Principle of duality",
+          "Boolean expression simplification",
+          "Algebraic minimization"
+        ]
+      },
+      {
+        "id": "boolean-function-minimization",
+        "name": "Boolean Function Minimization",
+        "topics": [
+          "Minterms",
+          "Maxterms",
+          "Canonical SOP",
+          "Canonical POS",
+          "Standard SOP and POS",
+          "Karnaugh maps",
+          "2-variable K-map",
+          "3-variable K-map",
+          "4-variable K-map",
+          "Don't-care conditions",
+          "Prime implicants",
+          "Essential prime implicants",
+          "Tabular minimization method",
+          "Quine-McCluskey method",
+          "Logic minimization problems"
+        ]
+      },
+      {
+        "id": "logic-gates",
+        "name": "Logic Gates",
+        "topics": [
+          "AND gate",
+          "OR gate",
+          "NOT gate",
+          "NAND gate",
+          "NOR gate",
+          "XOR gate",
+          "XNOR gate",
+          "Universal gates",
+          "Implementing functions using NAND",
+          "Implementing functions using NOR",
+          "Multilevel logic implementation"
+        ]
+      },
+      {
+        "id": "combinational-circuits",
+        "name": "Combinational Circuits",
+        "topics": [
+          "Half adder",
+          "Full adder",
+          "Half subtractor",
+          "Full subtractor",
+          "Ripple carry adder",
+          "Multiplexer",
+          "Demultiplexer",
+          "Decoder",
+          "Encoder",
+          "Priority encoder",
+          "Magnitude comparator",
+          "Code converters",
+          "Parity generator",
+          "Parity checker",
+          "Combinational circuit design",
+          "Circuit analysis from truth tables"
+        ]
+      },
+      {
+        "id": "sequential-circuits",
+        "name": "Sequential Circuits",
+        "topics": [
+          "Combinational versus sequential circuits",
+          "Latches",
+          "SR latch",
+          "D latch",
+          "Flip-flops",
+          "SR flip-flop",
+          "JK flip-flop",
+          "D flip-flop",
+          "T flip-flop",
+          "Characteristic tables",
+          "Characteristic equations",
+          "Excitation tables",
+          "Flip-flop conversions",
+          "Setup time",
+          "Hold time",
+          "Propagation delay",
+          "Clocking concepts",
+          "Race-around condition"
+        ]
+      },
+      {
+        "id": "registers-and-counters",
+        "name": "Registers and Counters",
+        "topics": [
+          "Shift registers",
+          "SISO, SIPO, PISO and PIPO",
+          "Ring counters",
+          "Johnson counters",
+          "Asynchronous counters",
+          "Synchronous counters",
+          "Up counters",
+          "Down counters",
+          "Mod-n counters",
+          "Counter design",
+          "Register-based circuit problems"
+        ]
+      },
+      {
+        "id": "finite-state-circuit-design",
+        "name": "Finite-State Circuit Design",
+        "topics": [
+          "State representation",
+          "State diagrams",
+          "State tables",
+          "State assignment",
+          "State minimization",
+          "Mealy machines",
+          "Moore machines",
+          "Sequential circuit implementation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "computer-organization-and-architecture",
+    "name": "Computer Organization and Architecture (COA)",
+    "syllabusGroup": "Computer Organization and Architecture",
+    "groups": [
+      {
+        "id": "computer-fundamentals",
+        "name": "Computer Fundamentals",
+        "topics": [
+          "Basic computer organization",
+          "Functional units of a computer",
+          "CPU organization",
+          "Datapath",
+          "Control path",
+          "Registers",
+          "Register transfer language",
+          "Instruction execution cycle",
+          "Fetch, decode and execute stages",
+          "Instruction sequencing"
+        ]
+      },
+      {
+        "id": "instruction-set-architecture",
+        "name": "Instruction Set Architecture",
+        "topics": [
+          "Instruction formats",
+          "Opcode and operand fields",
+          "Zero-address instructions",
+          "One-address instructions",
+          "Two-address instructions",
+          "Three-address instructions",
+          "Instruction types",
+          "Data transfer instructions",
+          "Arithmetic instructions",
+          "Logical instructions",
+          "Control transfer instructions",
+          "Stack-based instruction organization"
+        ]
+      },
+      {
+        "id": "addressing-modes",
+        "name": "Addressing Modes",
+        "topics": [
+          "Immediate addressing",
+          "Direct addressing",
+          "Indirect addressing",
+          "Register addressing",
+          "Register indirect addressing",
+          "Indexed addressing",
+          "Base register addressing",
+          "Relative addressing",
+          "Auto-increment and auto-decrement addressing",
+          "Effective address calculation",
+          "Addressing mode comparisons"
+        ]
+      },
+      {
+        "id": "arithmetic-and-logic-unit",
+        "name": "Arithmetic and Logic Unit",
+        "topics": [
+          "ALU organization",
+          "Arithmetic operations",
+          "Addition and subtraction circuits",
+          "Signed arithmetic",
+          "Unsigned arithmetic",
+          "Overflow detection",
+          "Multiplication algorithms",
+          "Division algorithms",
+          "Booth's multiplication algorithm",
+          "Restoring division",
+          "Non-restoring division",
+          "Floating-point arithmetic",
+          "ALU design problems"
+        ]
+      },
+      {
+        "id": "control-unit",
+        "name": "Control Unit",
+        "topics": [
+          "Control signals",
+          "Hardwired control unit",
+          "Microprogrammed control unit",
+          "Microinstructions",
+          "Control memory",
+          "Microprogram sequencing",
+          "Horizontal microprogramming",
+          "Vertical microprogramming",
+          "Control unit design and comparison"
+        ]
+      },
+      {
+        "id": "processor-performance",
+        "name": "Processor Performance",
+        "topics": [
+          "Clock cycle",
+          "Clock frequency",
+          "CPI",
+          "Instruction count",
+          "CPU execution time",
+          "MIPS",
+          "Performance equations",
+          "Speedup",
+          "Amdahl's law",
+          "Benchmarking concepts"
+        ]
+      },
+      {
+        "id": "pipelining",
+        "name": "Pipelining",
+        "topics": [
+          "Instruction pipelining",
+          "Pipeline stages",
+          "Pipeline throughput",
+          "Pipeline latency",
+          "Pipeline speedup",
+          "Ideal and non-ideal pipelines",
+          "Structural hazards",
+          "Data hazards",
+          "Control hazards",
+          "Data forwarding",
+          "Operand forwarding",
+          "Pipeline stalls",
+          "Pipeline flushing",
+          "Branch prediction basics",
+          "Pipeline performance calculations"
+        ]
+      },
+      {
+        "id": "memory-organization",
+        "name": "Memory Organization",
+        "topics": [
+          "Memory hierarchy",
+          "Registers",
+          "Cache memory",
+          "Main memory",
+          "Secondary memory",
+          "Locality of reference",
+          "Temporal locality",
+          "Spatial locality",
+          "Memory access time",
+          "Effective access time",
+          "Memory interfacing",
+          "Address decoding",
+          "Memory capacity calculations",
+          "Memory chip organization"
+        ]
+      },
+      {
+        "id": "cache-memory",
+        "name": "Cache Memory",
+        "topics": [
+          "Cache organization",
+          "Cache lines and blocks",
+          "Cache hit and miss",
+          "Hit ratio",
+          "Miss penalty",
+          "Direct mapping",
+          "Fully associative mapping",
+          "Set-associative mapping",
+          "Tag, index and offset",
+          "Cache address breakdown",
+          "Replacement policies",
+          "LRU",
+          "FIFO",
+          "Random replacement",
+          "Write-through",
+          "Write-back",
+          "Write-allocate",
+          "No-write-allocate",
+          "Cache performance calculations"
+        ]
+      },
+      {
+        "id": "i-o-organization",
+        "name": "I/O Organization",
+        "topics": [
+          "I/O interfaces",
+          "Programmed I/O",
+          "Interrupt-driven I/O",
+          "Direct Memory Access (DMA)",
+          "DMA controller",
+          "Interrupt handling",
+          "Interrupt priority",
+          "Interrupt latency",
+          "Memory-mapped I/O",
+          "Isolated I/O",
+          "I/O data transfer calculations"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c-programming",
+    "name": "C Programming",
+    "syllabusGroup": "Programming and Data Structures",
+    "groups": [
+      {
+        "id": "c-language-fundamentals",
+        "name": "C Language Fundamentals",
+        "topics": [
+          "Structure of a C program",
+          "Header files",
+          "Preprocessor directives",
+          "Main function",
+          "Compilation process",
+          "Variables and constants",
+          "Data types",
+          "Type modifiers",
+          "Type conversion",
+          "Type casting",
+          "Operators",
+          "Operator precedence",
+          "Associativity",
+          "Expressions",
+          "Input and output",
+          "Formatted I/O"
+        ]
+      },
+      {
+        "id": "control-flow",
+        "name": "Control Flow",
+        "topics": [
+          "if statement",
+          "if-else statement",
+          "Nested conditions",
+          "switch statement",
+          "for loop",
+          "while loop",
+          "do-while loop",
+          "break",
+          "continue",
+          "goto",
+          "Nested loops",
+          "Loop tracing",
+          "Conditional expression evaluation"
+        ]
+      },
+      {
+        "id": "functions",
+        "name": "Functions",
+        "topics": [
+          "Function declaration",
+          "Function definition",
+          "Function calls",
+          "Function arguments",
+          "Return values",
+          "Call by value",
+          "Scope and lifetime",
+          "Local and global variables",
+          "Storage classes",
+          "Static variables",
+          "External variables",
+          "Recursion",
+          "Recursive function tracing",
+          "Activation records",
+          "Function call stack"
+        ]
+      },
+      {
+        "id": "arrays-and-strings",
+        "name": "Arrays and Strings",
+        "topics": [
+          "One-dimensional arrays",
+          "Two-dimensional arrays",
+          "Multidimensional arrays",
+          "Array initialization",
+          "Array indexing",
+          "Array traversal",
+          "Character arrays",
+          "String representation",
+          "String functions",
+          "String manipulation",
+          "Array and pointer relationship",
+          "Passing arrays to functions"
+        ]
+      },
+      {
+        "id": "pointers",
+        "name": "Pointers",
+        "topics": [
+          "Pointer basics",
+          "Address operator",
+          "Dereferencing",
+          "Pointer declaration",
+          "Pointer arithmetic",
+          "Pointer to pointer",
+          "Pointers and arrays",
+          "Pointers and strings",
+          "Pointers and functions",
+          "Function pointers",
+          "Void pointers",
+          "Null pointers",
+          "Dangling pointers",
+          "Wild pointers",
+          "Const pointers",
+          "Pointer tracing"
+        ]
+      },
+      {
+        "id": "dynamic-memory-allocation",
+        "name": "Dynamic Memory Allocation",
+        "topics": [
+          "Stack versus heap memory",
+          "malloc",
+          "calloc",
+          "realloc",
+          "free",
+          "Dynamic arrays",
+          "Memory allocation and deallocation",
+          "Memory leaks",
+          "Dangling references",
+          "Dynamic memory tracing"
+        ]
+      },
+      {
+        "id": "structures-and-unions",
+        "name": "Structures and Unions",
+        "topics": [
+          "Structure declaration",
+          "Structure initialization",
+          "Accessing structure members",
+          "Nested structures",
+          "Arrays of structures",
+          "Pointers to structures",
+          "Self-referential structures",
+          "Unions",
+          "Structure versus union",
+          "Enumerations",
+          "Typedef"
+        ]
+      },
+      {
+        "id": "c-language-problem-solving",
+        "name": "C Language Problem Solving",
+        "topics": [
+          "Output prediction",
+          "Operator precedence questions",
+          "Pointer-based output questions",
+          "Array indexing questions",
+          "Recursion tracing",
+          "Nested loop tracing",
+          "Function call tracing",
+          "Scope and lifetime questions",
+          "Undefined and implementation-dependent behaviour",
+          "Memory layout and pointer problems"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data-structures",
+    "name": "Data Structures",
+    "syllabusGroup": "Programming and Data Structures",
+    "groups": [
+      {
+        "id": "data-structure-fundamentals",
+        "name": "Data Structure Fundamentals",
+        "topics": [
+          "Abstract Data Types",
+          "Linear data structures",
+          "Non-linear data structures",
+          "Static versus dynamic structures",
+          "Memory representation",
+          "Time and space trade-offs"
+        ]
+      },
+      {
+        "id": "arrays",
+        "name": "Arrays",
+        "topics": [
+          "Array representation",
+          "Address calculation",
+          "Row-major order",
+          "Column-major order",
+          "Multidimensional arrays",
+          "Sparse matrices",
+          "Array insertion and deletion",
+          "Array traversal",
+          "Array searching"
+        ]
+      },
+      {
+        "id": "linked-lists",
+        "name": "Linked Lists",
+        "topics": [
+          "Singly linked lists",
+          "Doubly linked lists",
+          "Circular linked lists",
+          "Circular doubly linked lists",
+          "Node representation",
+          "Insertion operations",
+          "Deletion operations",
+          "Traversal",
+          "Searching",
+          "Reversing a linked list",
+          "Linked list applications",
+          "Pointer manipulation",
+          "Linked list complexity"
+        ]
+      },
+      {
+        "id": "stacks",
+        "name": "Stacks",
+        "topics": [
+          "Stack ADT",
+          "Array implementation",
+          "Linked list implementation",
+          "Push",
+          "Pop",
+          "Peek",
+          "Overflow and underflow",
+          "Infix expressions",
+          "Prefix expressions",
+          "Postfix expressions",
+          "Infix-to-postfix conversion",
+          "Infix-to-prefix conversion",
+          "Postfix evaluation",
+          "Prefix evaluation",
+          "Parentheses matching",
+          "Stack-based recursion simulation"
+        ]
+      },
+      {
+        "id": "queues",
+        "name": "Queues",
+        "topics": [
+          "Queue ADT",
+          "Array implementation",
+          "Linked list implementation",
+          "Enqueue",
+          "Dequeue",
+          "Circular queue",
+          "Priority queue",
+          "Deque",
+          "Queue overflow and underflow",
+          "Queue applications",
+          "Circular queue calculations"
+        ]
+      },
+      {
+        "id": "trees",
+        "name": "Trees",
+        "topics": [
+          "Tree terminology",
+          "Root, parent and child",
+          "Leaf nodes",
+          "Internal nodes",
+          "Height and depth",
+          "Degree of a node",
+          "Binary trees",
+          "Full binary trees",
+          "Complete binary trees",
+          "Perfect binary trees",
+          "Balanced binary trees",
+          "Tree properties",
+          "Number of nodes and height relationships",
+          "Tree representation",
+          "Array representation",
+          "Linked representation"
+        ]
+      },
+      {
+        "id": "tree-traversals",
+        "name": "Tree Traversals",
+        "topics": [
+          "Preorder traversal",
+          "Inorder traversal",
+          "Postorder traversal",
+          "Level-order traversal",
+          "Recursive traversal",
+          "Iterative traversal",
+          "Constructing trees from traversal sequences"
+        ]
+      },
+      {
+        "id": "binary-search-trees",
+        "name": "Binary Search Trees",
+        "topics": [
+          "BST properties",
+          "Searching in BST",
+          "Insertion in BST",
+          "Deletion in BST",
+          "Minimum and maximum elements",
+          "Inorder successor",
+          "Inorder predecessor",
+          "BST height",
+          "BST complexity",
+          "BST construction and tracing"
+        ]
+      },
+      {
+        "id": "heaps",
+        "name": "Heaps",
+        "topics": [
+          "Min heap",
+          "Max heap",
+          "Heap representation",
+          "Heap insertion",
+          "Heap deletion",
+          "Heapify",
+          "Build heap",
+          "Heap height",
+          "Priority queue implementation",
+          "Heap-based problem solving"
+        ]
+      },
+      {
+        "id": "graphs",
+        "name": "Graphs",
+        "topics": [
+          "Graph terminology",
+          "Directed and undirected graphs",
+          "Weighted graphs",
+          "Adjacency matrix",
+          "Adjacency list",
+          "Incidence matrix",
+          "Graph traversal basics",
+          "Breadth-First Search (BFS)",
+          "Depth-First Search (DFS)",
+          "Connected components",
+          "Cycle detection",
+          "Graph representation comparisons"
+        ]
+      },
+      {
+        "id": "advanced-data-structure-concepts-relevant-to-gate",
+        "name": "Advanced Data Structure Concepts Relevant to GATE",
+        "topics": [
+          "Disjoint Set Union",
+          "Find operation",
+          "Union operation",
+          "Path compression",
+          "Union by rank or size",
+          "Basic trie structure",
+          "Hash table representation",
+          "Collision handling",
+          "Separate chaining",
+          "Open addressing",
+          "Linear probing",
+          "Quadratic probing",
+          "Double hashing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "algorithms",
+    "name": "Algorithms",
+    "syllabusGroup": "Algorithms",
+    "groups": [
+      {
+        "id": "algorithm-analysis",
+        "name": "Algorithm Analysis",
+        "topics": [
+          "What is an algorithm?",
+          "Input size",
+          "Time complexity",
+          "Space complexity",
+          "Best-case complexity",
+          "Average-case complexity",
+          "Worst-case complexity",
+          "Asymptotic analysis",
+          "Big-O notation",
+          "Big-Omega notation",
+          "Big-Theta notation",
+          "Little-o and little-omega",
+          "Comparing growth rates",
+          "Constant complexity",
+          "Logarithmic complexity",
+          "Linear complexity",
+          "Linearithmic complexity",
+          "Polynomial complexity",
+          "Exponential complexity",
+          "Factorial complexity",
+          "Complexity of loops",
+          "Nested loop analysis",
+          "Recursive algorithm analysis",
+          "Recurrence relations",
+          "Substitution method",
+          "Recursion tree method",
+          "Master theorem",
+          "Amortized analysis basics"
+        ]
+      },
+      {
+        "id": "searching",
+        "name": "Searching",
+        "topics": [
+          "Linear search",
+          "Binary search",
+          "Binary search prerequisites",
+          "Iterative binary search",
+          "Recursive binary search",
+          "Search complexity",
+          "Search tracing"
+        ]
+      },
+      {
+        "id": "sorting",
+        "name": "Sorting",
+        "topics": [
+          "Bubble sort",
+          "Selection sort",
+          "Insertion sort",
+          "Merge sort",
+          "Quick sort",
+          "Heap sort",
+          "Counting sort",
+          "Radix sort",
+          "Sorting stability",
+          "In-place sorting",
+          "Adaptive sorting",
+          "Comparison-based sorting",
+          "Lower bound for comparison sorting",
+          "Best, average and worst-case analysis",
+          "Partitioning and pivot selection",
+          "Sorting trace problems"
+        ]
+      },
+      {
+        "id": "hashing",
+        "name": "Hashing",
+        "topics": [
+          "Hash functions",
+          "Hash tables",
+          "Collision resolution",
+          "Separate chaining",
+          "Linear probing",
+          "Quadratic probing",
+          "Double hashing",
+          "Load factor",
+          "Clustering",
+          "Expected search complexity",
+          "Hash table insertion and deletion"
+        ]
+      },
+      {
+        "id": "divide-and-conquer",
+        "name": "Divide and Conquer",
+        "topics": [
+          "Divide-and-conquer paradigm",
+          "Problem decomposition",
+          "Combining subproblems",
+          "Recurrence formulation",
+          "Binary search",
+          "Merge sort",
+          "Quick sort",
+          "Strassen's matrix multiplication",
+          "Complexity analysis"
+        ]
+      },
+      {
+        "id": "greedy-algorithms",
+        "name": "Greedy Algorithms",
+        "topics": [
+          "Greedy choice property",
+          "Optimal substructure",
+          "Activity selection",
+          "Fractional knapsack",
+          "Job sequencing",
+          "Huffman coding",
+          "Greedy correctness",
+          "Counterexamples to greedy approaches"
+        ]
+      },
+      {
+        "id": "dynamic-programming",
+        "name": "Dynamic Programming",
+        "topics": [
+          "Overlapping subproblems",
+          "Optimal substructure",
+          "Memoization",
+          "Tabulation",
+          "State definition",
+          "Recurrence formulation",
+          "Fibonacci",
+          "0/1 knapsack",
+          "Longest Common Subsequence",
+          "Matrix chain multiplication",
+          "Coin change",
+          "Optimal substructure verification",
+          "DP table construction",
+          "DP complexity analysis"
+        ]
+      },
+      {
+        "id": "graph-algorithms",
+        "name": "Graph Algorithms",
+        "topics": [
+          "BFS",
+          "DFS",
+          "Graph traversal complexity",
+          "Topological sorting",
+          "Directed acyclic graphs",
+          "Strongly connected components",
+          "Minimum spanning trees",
+          "Prim's algorithm",
+          "Kruskal's algorithm",
+          "Disjoint Set Union in MST",
+          "Shortest path problems",
+          "Dijkstra's algorithm",
+          "Bellman-Ford algorithm",
+          "Floyd-Warshall algorithm",
+          "Negative edge weights",
+          "Negative cycles",
+          "Shortest path in DAGs",
+          "Algorithm comparisons and tracing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "theory-of-computation",
+    "name": "Theory of Computation (TOC)",
+    "syllabusGroup": "Theory of Computation",
+    "groups": [
+      {
+        "id": "formal-languages",
+        "name": "Formal Languages",
+        "topics": [
+          "Alphabets",
+          "Strings",
+          "Empty string",
+          "String operations",
+          "Language definition",
+          "Language operations",
+          "Language concatenation",
+          "Kleene star",
+          "Kleene plus",
+          "Language closure properties"
+        ]
+      },
+      {
+        "id": "finite-automata",
+        "name": "Finite Automata",
+        "topics": [
+          "Deterministic Finite Automata (DFA)",
+          "Non-deterministic Finite Automata (NFA)",
+          "Epsilon-NFA",
+          "Transition functions",
+          "Transition diagrams",
+          "Transition tables",
+          "Acceptance of strings",
+          "DFA construction",
+          "NFA construction",
+          "NFA to DFA conversion",
+          "Epsilon closure",
+          "DFA minimization",
+          "Equivalent states",
+          "Distinguishable states",
+          "Myhill-Nerode theorem",
+          "Automata-based problem solving"
+        ]
+      },
+      {
+        "id": "regular-expressions-and-regular-languages",
+        "name": "Regular Expressions and Regular Languages",
+        "topics": [
+          "Regular expressions",
+          "Regular expression operators",
+          "Regular language representation",
+          "Regular expression to automata",
+          "Automata to regular expression",
+          "Arden's theorem",
+          "Closure properties of regular languages",
+          "Pumping lemma for regular languages",
+          "Proving non-regularity"
+        ]
+      },
+      {
+        "id": "context-free-grammars",
+        "name": "Context-Free Grammars",
+        "topics": [
+          "Grammar definitions",
+          "Variables and terminals",
+          "Production rules",
+          "Derivations",
+          "Leftmost derivation",
+          "Rightmost derivation",
+          "Parse trees",
+          "Ambiguous grammars",
+          "Grammar simplification",
+          "Removal of useless symbols",
+          "Removal of epsilon productions",
+          "Removal of unit productions",
+          "Chomsky Normal Form",
+          "Greibach Normal Form",
+          "Context-free languages",
+          "Closure properties of CFLs"
+        ]
+      },
+      {
+        "id": "pushdown-automata",
+        "name": "Pushdown Automata",
+        "topics": [
+          "PDA definition",
+          "Stack operations",
+          "Instantaneous descriptions",
+          "Acceptance by final state",
+          "Acceptance by empty stack",
+          "Deterministic PDA",
+          "Non-deterministic PDA",
+          "CFG to PDA conversion",
+          "PDA to CFG conversion",
+          "PDA construction problems"
+        ]
+      },
+      {
+        "id": "pumping-lemma-for-cfls",
+        "name": "Pumping Lemma for CFLs",
+        "topics": [
+          "Pumping lemma statement",
+          "Applying the lemma",
+          "Proving a language is not context-free",
+          "Limitations of pumping lemmas"
+        ]
+      },
+      {
+        "id": "turing-machines",
+        "name": "Turing Machines",
+        "topics": [
+          "Turing machine model",
+          "Tape and tape alphabet",
+          "States and transition functions",
+          "Instantaneous descriptions",
+          "Language acceptance",
+          "Decidable languages",
+          "Recognizable languages",
+          "Variants of Turing machines",
+          "Multi-tape Turing machines",
+          "Universal Turing machine",
+          "Church-Turing thesis"
+        ]
+      },
+      {
+        "id": "decidability-and-undecidability",
+        "name": "Decidability and Undecidability",
+        "topics": [
+          "Decidable problems",
+          "Undecidable problems",
+          "Halting problem",
+          "Reducibility",
+          "Mapping reductions",
+          "Undecidability proofs",
+          "Recursive languages",
+          "Recursively enumerable languages",
+          "Relationship between language classes",
+          "Closure properties of language classes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "compiler-design",
+    "name": "Compiler Design",
+    "syllabusGroup": "Compiler Design",
+    "groups": [
+      {
+        "id": "compiler-fundamentals",
+        "name": "Compiler Fundamentals",
+        "topics": [
+          "Compiler structure",
+          "Compiler versus interpreter",
+          "Phases of compilation",
+          "Front end and back end",
+          "Symbol table",
+          "Error handling",
+          "Compiler passes",
+          "Source code to target code flow"
+        ]
+      },
+      {
+        "id": "lexical-analysis",
+        "name": "Lexical Analysis",
+        "topics": [
+          "Role of lexical analyser",
+          "Tokens",
+          "Lexemes",
+          "Patterns",
+          "Regular expressions in lexical analysis",
+          "Token recognition",
+          "Lexical errors",
+          "Input buffering",
+          "Finite automata in lexical analysis",
+          "Lex and lexical analyser concepts"
+        ]
+      },
+      {
+        "id": "syntax-analysis",
+        "name": "Syntax Analysis",
+        "topics": [
+          "Role of parser",
+          "Context-free grammars",
+          "Parse trees",
+          "Abstract syntax trees",
+          "Ambiguity",
+          "Leftmost and rightmost derivation",
+          "Left recursion",
+          "Left factoring",
+          "Top-down parsing",
+          "Recursive descent parsing",
+          "Predictive parsing",
+          "FIRST sets",
+          "FOLLOW sets",
+          "LL(1) parsing",
+          "Bottom-up parsing",
+          "Shift-reduce parsing",
+          "Handle pruning",
+          "LR parsing basics",
+          "SLR parsing",
+          "CLR/LR(1) parsing",
+          "LALR parsing",
+          "Parsing table construction",
+          "Syntax error recovery"
+        ]
+      },
+      {
+        "id": "syntax-directed-translation",
+        "name": "Syntax-Directed Translation",
+        "topics": [
+          "Syntax-directed definitions",
+          "Attributes",
+          "Synthesized attributes",
+          "Inherited attributes",
+          "Attribute grammars",
+          "Dependency graphs",
+          "Evaluation order",
+          "Syntax-directed translation schemes",
+          "Intermediate representations"
+        ]
+      },
+      {
+        "id": "intermediate-code-generation",
+        "name": "Intermediate Code Generation",
+        "topics": [
+          "Intermediate code",
+          "Three-address code",
+          "Quadruples",
+          "Triples",
+          "Indirect triples",
+          "Translation of expressions",
+          "Boolean expression translation",
+          "Control-flow translation",
+          "Backpatching",
+          "Type checking",
+          "Type conversion",
+          "Type expressions",
+          "Intermediate code for arrays and pointers"
+        ]
+      },
+      {
+        "id": "runtime-environments",
+        "name": "Runtime Environments",
+        "topics": [
+          "Storage organization",
+          "Static allocation",
+          "Stack allocation",
+          "Heap allocation",
+          "Activation records",
+          "Procedure calls",
+          "Parameter passing",
+          "Return values",
+          "Access to non-local variables",
+          "Static and dynamic scoping",
+          "Runtime memory management"
+        ]
+      },
+      {
+        "id": "code-optimization",
+        "name": "Code Optimization",
+        "topics": [
+          "Basic blocks",
+          "Control-flow graphs",
+          "Local optimization",
+          "Common subexpression elimination",
+          "Constant folding",
+          "Constant propagation",
+          "Copy propagation",
+          "Dead code elimination",
+          "Algebraic simplification",
+          "Strength reduction",
+          "Loop optimization",
+          "Peephole optimization",
+          "DAG representation of basic blocks"
+        ]
+      },
+      {
+        "id": "data-flow-analysis",
+        "name": "Data Flow Analysis",
+        "topics": [
+          "Data flow frameworks",
+          "Reaching definitions",
+          "Live variable analysis",
+          "Liveness analysis",
+          "Available expressions",
+          "Constant propagation",
+          "Data flow equations",
+          "Fixed-point computation",
+          "Optimization using data flow information"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "operating-systems",
+    "name": "Operating Systems (OS)",
+    "syllabusGroup": "Operating Systems",
+    "groups": [
+      {
+        "id": "os-fundamentals",
+        "name": "OS Fundamentals",
+        "topics": [
+          "What is an operating system?",
+          "Objectives and functions of an OS",
+          "Types of operating systems",
+          "Batch systems",
+          "Multiprogramming systems",
+          "Time-sharing systems",
+          "Distributed systems",
+          "Real-time systems",
+          "Kernel and shell",
+          "User mode and kernel mode",
+          "Privileged instructions",
+          "System calls",
+          "Types of system calls",
+          "OS structure",
+          "Monolithic kernel",
+          "Microkernel",
+          "Interrupts and traps"
+        ]
+      },
+      {
+        "id": "processes",
+        "name": "Processes",
+        "topics": [
+          "Program versus process",
+          "Process states",
+          "Process state transition diagram",
+          "Process Control Block",
+          "Process creation",
+          "Process termination",
+          "Fork system call",
+          "Exec system call",
+          "Wait system call",
+          "Context switching",
+          "Process scheduling",
+          "Parent and child processes",
+          "Zombie processes",
+          "Orphan processes",
+          "Process-related system call tracing"
+        ]
+      },
+      {
+        "id": "threads",
+        "name": "Threads",
+        "topics": [
+          "Thread fundamentals",
+          "Process versus thread",
+          "User-level threads",
+          "Kernel-level threads",
+          "Multithreading models",
+          "Many-to-one model",
+          "One-to-one model",
+          "Many-to-many model",
+          "Thread libraries",
+          "Thread scheduling",
+          "Multicore considerations"
+        ]
+      },
+      {
+        "id": "inter-process-communication",
+        "name": "Inter-Process Communication",
+        "topics": [
+          "Shared memory",
+          "Message passing",
+          "Pipes",
+          "Named pipes",
+          "Message queues",
+          "Sockets",
+          "Signals",
+          "IPC comparisons",
+          "Producer-consumer communication"
+        ]
+      },
+      {
+        "id": "cpu-scheduling",
+        "name": "CPU Scheduling",
+        "topics": [
+          "Scheduling objectives",
+          "CPU-I/O burst cycle",
+          "Preemptive scheduling",
+          "Non-preemptive scheduling",
+          "First Come First Serve",
+          "Shortest Job First",
+          "Shortest Remaining Time First",
+          "Priority scheduling",
+          "Round Robin",
+          "Multilevel queue scheduling",
+          "Multilevel feedback queue",
+          "Dispatcher",
+          "Scheduling criteria",
+          "Waiting time",
+          "Turnaround time",
+          "Response time",
+          "Throughput",
+          "CPU utilization",
+          "Gantt chart construction",
+          "Scheduling numerical problems"
+        ]
+      },
+      {
+        "id": "process-synchronization",
+        "name": "Process Synchronization",
+        "topics": [
+          "Race conditions",
+          "Critical section problem",
+          "Mutual exclusion",
+          "Progress",
+          "Bounded waiting",
+          "Peterson's algorithm",
+          "Hardware synchronization",
+          "Atomic operations",
+          "Test-and-set",
+          "Compare-and-swap",
+          "Mutex locks",
+          "Semaphores",
+          "Binary semaphores",
+          "Counting semaphores",
+          "Spinlocks",
+          "Monitors",
+          "Condition variables",
+          "Classical synchronization problems",
+          "Producer-consumer problem",
+          "Readers-writers problem",
+          "Dining philosophers problem",
+          "Synchronization tracing and numerical problems"
+        ]
+      },
+      {
+        "id": "deadlocks",
+        "name": "Deadlocks",
+        "topics": [
+          "Deadlock definition",
+          "Necessary conditions",
+          "Mutual exclusion",
+          "Hold and wait",
+          "No preemption",
+          "Circular wait",
+          "Resource allocation graphs",
+          "Deadlock prevention",
+          "Deadlock avoidance",
+          "Banker's algorithm",
+          "Safe and unsafe states",
+          "Deadlock detection",
+          "Deadlock recovery",
+          "Resource request algorithms",
+          "Deadlock numerical problems"
+        ]
+      },
+      {
+        "id": "memory-management",
+        "name": "Memory Management",
+        "topics": [
+          "Logical and physical addresses",
+          "Address binding",
+          "Compile-time binding",
+          "Load-time binding",
+          "Execution-time binding",
+          "Memory allocation",
+          "Contiguous memory allocation",
+          "Fixed partitioning",
+          "Variable partitioning",
+          "Internal fragmentation",
+          "External fragmentation",
+          "First fit",
+          "Best fit",
+          "Worst fit",
+          "Compaction",
+          "Swapping",
+          "Base and limit registers"
+        ]
+      },
+      {
+        "id": "paging-and-segmentation",
+        "name": "Paging and Segmentation",
+        "topics": [
+          "Paging fundamentals",
+          "Pages and frames",
+          "Page tables",
+          "Page number and offset",
+          "Address translation",
+          "Page table size calculations",
+          "Multi-level paging",
+          "Inverted page tables",
+          "Translation Lookaside Buffer",
+          "TLB hit ratio",
+          "Effective access time",
+          "Segmentation",
+          "Segment tables",
+          "Segmentation with paging",
+          "Internal and external fragmentation comparisons",
+          "Address translation numerical problems"
+        ]
+      },
+      {
+        "id": "virtual-memory",
+        "name": "Virtual Memory",
+        "topics": [
+          "Virtual memory concepts",
+          "Demand paging",
+          "Page faults",
+          "Page fault handling",
+          "Copy-on-write",
+          "Page replacement",
+          "FIFO",
+          "Optimal page replacement",
+          "LRU",
+          "Second chance",
+          "Clock algorithm",
+          "LFU basics",
+          "Belady's anomaly",
+          "Thrashing",
+          "Working set model",
+          "Locality of reference",
+          "Frame allocation",
+          "Page replacement numerical problems"
+        ]
+      },
+      {
+        "id": "file-systems",
+        "name": "File Systems",
+        "topics": [
+          "File concepts",
+          "File attributes",
+          "File operations",
+          "File types",
+          "Directory structures",
+          "Single-level directories",
+          "Two-level directories",
+          "Tree-structured directories",
+          "Acyclic graph directories",
+          "File allocation methods",
+          "Contiguous allocation",
+          "Linked allocation",
+          "Indexed allocation",
+          "Free-space management",
+          "Bitmaps",
+          "Linked free lists",
+          "File protection",
+          "File access methods",
+          "Inodes and file metadata"
+        ]
+      },
+      {
+        "id": "i-o-systems-and-disk-scheduling",
+        "name": "I/O Systems and Disk Scheduling",
+        "topics": [
+          "I/O hardware basics",
+          "Device controllers",
+          "Device drivers",
+          "Programmed I/O",
+          "Interrupt-driven I/O",
+          "DMA",
+          "Buffering",
+          "Caching",
+          "Spooling",
+          "Disk structure",
+          "Disk access time",
+          "Seek time",
+          "Rotational latency",
+          "Transfer time",
+          "FCFS disk scheduling",
+          "SSTF",
+          "SCAN",
+          "C-SCAN",
+          "LOOK",
+          "C-LOOK",
+          "Disk scheduling numerical problems"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "database-management-systems",
+    "name": "Database Management Systems (DBMS)",
+    "syllabusGroup": "Database Management Systems",
+    "groups": [
+      {
+        "id": "database-fundamentals",
+        "name": "Database Fundamentals",
+        "topics": [
+          "Database concepts",
+          "DBMS architecture",
+          "Three-schema architecture",
+          "Data abstraction",
+          "Data independence",
+          "Database languages",
+          "DDL",
+          "DML",
+          "DCL",
+          "TCL",
+          "Database users",
+          "Database administrator"
+        ]
+      },
+      {
+        "id": "entity-relationship-model",
+        "name": "Entity-Relationship Model",
+        "topics": [
+          "Entities",
+          "Entity sets",
+          "Attributes",
+          "Simple and composite attributes",
+          "Single-valued and multivalued attributes",
+          "Derived attributes",
+          "Keys in ER model",
+          "Relationships",
+          "Relationship sets",
+          "Degree of relationships",
+          "Cardinality constraints",
+          "Participation constraints",
+          "Weak entities",
+          "Identifying relationships",
+          "ER diagrams",
+          "ER-to-relational conversion"
+        ]
+      },
+      {
+        "id": "relational-model",
+        "name": "Relational Model",
+        "topics": [
+          "Relations and tuples",
+          "Attributes and domains",
+          "Relation schema",
+          "Relation instances",
+          "Superkeys",
+          "Candidate keys",
+          "Primary keys",
+          "Alternate keys",
+          "Foreign keys",
+          "Relational integrity",
+          "Entity integrity",
+          "Referential integrity",
+          "Relational constraints"
+        ]
+      },
+      {
+        "id": "relational-algebra",
+        "name": "Relational Algebra",
+        "topics": [
+          "Selection",
+          "Projection",
+          "Union",
+          "Set difference",
+          "Cartesian product",
+          "Rename",
+          "Intersection",
+          "Joins",
+          "Theta join",
+          "Equi join",
+          "Natural join",
+          "Outer joins",
+          "Division",
+          "Relational algebra expressions",
+          "Query equivalence",
+          "Relational algebra evaluation"
+        ]
+      },
+      {
+        "id": "relational-calculus",
+        "name": "Relational Calculus",
+        "topics": [
+          "Tuple relational calculus",
+          "Domain relational calculus",
+          "Free and bound variables",
+          "Quantifiers",
+          "Safe expressions",
+          "Relational calculus queries",
+          "Relational algebra and calculus equivalence"
+        ]
+      },
+      {
+        "id": "sql",
+        "name": "SQL",
+        "topics": [
+          "SQL fundamentals",
+          "CREATE",
+          "ALTER",
+          "DROP",
+          "INSERT",
+          "UPDATE",
+          "DELETE",
+          "SELECT",
+          "WHERE",
+          "DISTINCT",
+          "ORDER BY",
+          "GROUP BY",
+          "HAVING",
+          "Aggregate functions",
+          "Nested queries",
+          "Correlated subqueries",
+          "EXISTS",
+          "NOT EXISTS",
+          "IN",
+          "ANY",
+          "ALL",
+          "Joins",
+          "Inner join",
+          "Outer join",
+          "Self join",
+          "Set operations",
+          "UNION",
+          "INTERSECT",
+          "EXCEPT",
+          "Views",
+          "NULL values",
+          "Three-valued logic",
+          "SQL constraints",
+          "Primary key and foreign key constraints",
+          "SQL query output problems"
+        ]
+      },
+      {
+        "id": "functional-dependencies",
+        "name": "Functional Dependencies",
+        "topics": [
+          "Functional dependency",
+          "Trivial and non-trivial dependencies",
+          "Attribute closure",
+          "Armstrong's axioms",
+          "Inference rules",
+          "Attribute closure computation",
+          "Candidate key determination",
+          "Minimal cover",
+          "Canonical cover",
+          "Functional dependency preservation"
+        ]
+      },
+      {
+        "id": "normalization",
+        "name": "Normalization",
+        "topics": [
+          "Database anomalies",
+          "Insertion anomaly",
+          "Deletion anomaly",
+          "Update anomaly",
+          "First Normal Form",
+          "Second Normal Form",
+          "Third Normal Form",
+          "BCNF",
+          "Multivalued dependencies",
+          "Fourth Normal Form",
+          "Lossless decomposition",
+          "Dependency preservation",
+          "Normalization problems"
+        ]
+      },
+      {
+        "id": "file-organization",
+        "name": "File Organization",
+        "topics": [
+          "Records and blocks",
+          "Fixed-length records",
+          "Variable-length records",
+          "Heap file organization",
+          "Sequential file organization",
+          "Hash file organization",
+          "Ordered files",
+          "Record access calculations",
+          "Blocking factor",
+          "Disk block access"
+        ]
+      },
+      {
+        "id": "indexing",
+        "name": "Indexing",
+        "topics": [
+          "Primary indexes",
+          "Secondary indexes",
+          "Clustering indexes",
+          "Dense indexes",
+          "Sparse indexes",
+          "Multilevel indexes",
+          "B-trees",
+          "B+ trees",
+          "B-tree insertion and deletion",
+          "B+ tree insertion and deletion",
+          "Index height",
+          "Search cost",
+          "Range queries",
+          "Indexing numerical problems"
+        ]
+      },
+      {
+        "id": "transactions",
+        "name": "Transactions",
+        "topics": [
+          "Transaction concepts",
+          "ACID properties",
+          "Transaction states",
+          "Schedules",
+          "Serial schedules",
+          "Concurrent schedules",
+          "Conflict serializability",
+          "Precedence graphs",
+          "View serializability",
+          "Recoverable schedules",
+          "Cascadeless schedules",
+          "Strict schedules",
+          "Recoverability comparisons"
+        ]
+      },
+      {
+        "id": "concurrency-control",
+        "name": "Concurrency Control",
+        "topics": [
+          "Lock-based protocols",
+          "Shared locks",
+          "Exclusive locks",
+          "Two-phase locking",
+          "Strict 2PL",
+          "Rigorous 2PL",
+          "Deadlocks in DBMS",
+          "Timestamp ordering",
+          "Validation-based protocols",
+          "Multiple granularity locking",
+          "Lock compatibility",
+          "Transaction schedule analysis"
+        ]
+      },
+      {
+        "id": "recovery",
+        "name": "Recovery",
+        "topics": [
+          "Log-based recovery",
+          "Deferred database modification",
+          "Immediate database modification",
+          "Checkpoints",
+          "Undo and redo",
+          "Shadow paging",
+          "Crash recovery",
+          "Recovery schedule problems"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "computer-networks",
+    "name": "Computer Networks (CN)",
+    "syllabusGroup": "Computer Networks",
+    "groups": [
+      {
+        "id": "network-fundamentals",
+        "name": "Network Fundamentals",
+        "topics": [
+          "Network basics",
+          "Network components",
+          "Network topologies",
+          "Protocols",
+          "Services and interfaces",
+          "Protocol layering",
+          "OSI model",
+          "TCP/IP model",
+          "Layer responsibilities",
+          "Encapsulation",
+          "Decapsulation",
+          "Protocol data units",
+          "Service access points"
+        ]
+      },
+      {
+        "id": "switching",
+        "name": "Switching",
+        "topics": [
+          "Circuit switching",
+          "Packet switching",
+          "Virtual circuit switching",
+          "Datagram networks",
+          "Store-and-forward transmission",
+          "Switching comparisons",
+          "Transmission delay",
+          "Propagation delay",
+          "Processing delay",
+          "Queuing delay",
+          "Bandwidth",
+          "Throughput",
+          "Latency",
+          "Network performance metrics",
+          "End-to-end delay calculations"
+        ]
+      },
+      {
+        "id": "data-link-layer",
+        "name": "Data Link Layer",
+        "topics": [
+          "Data link layer functions",
+          "Framing",
+          "Error detection",
+          "Error detection versus correction",
+          "Parity",
+          "Two-dimensional parity",
+          "Checksum",
+          "Cyclic Redundancy Check",
+          "CRC calculations",
+          "Error detection capability"
+        ]
+      },
+      {
+        "id": "medium-access-control",
+        "name": "Medium Access Control",
+        "topics": [
+          "MAC fundamentals",
+          "Channel allocation",
+          "Random access concepts",
+          "Ethernet",
+          "Ethernet frame format",
+          "MAC addressing",
+          "Ethernet operation",
+          "Collision concepts",
+          "MAC numerical and protocol problems within the official syllabus"
+        ]
+      },
+      {
+        "id": "routing",
+        "name": "Routing",
+        "topics": [
+          "Routing fundamentals",
+          "Routing tables",
+          "Distance vector routing",
+          "Bellman-Ford routing principle",
+          "Count-to-infinity problem",
+          "Split horizon",
+          "Link state routing",
+          "Dijkstra's algorithm",
+          "Routing convergence",
+          "Distance vector versus link state",
+          "Routing table construction"
+        ]
+      },
+      {
+        "id": "ipv4",
+        "name": "IPv4",
+        "topics": [
+          "IPv4 addressing",
+          "IPv4 address structure",
+          "Network and host portions",
+          "Subnet masks",
+          "Subnetting",
+          "CIDR notation",
+          "Prefix lengths",
+          "Network address",
+          "Broadcast address",
+          "Usable host range",
+          "Address aggregation",
+          "Route summarization",
+          "Longest prefix matching",
+          "Network Address Translation",
+          "Static NAT",
+          "Dynamic NAT",
+          "Port Address Translation",
+          "IPv4 fragmentation",
+          "Fragment offset",
+          "More Fragments flag",
+          "Maximum transmission unit",
+          "Fragmentation numerical problems"
+        ]
+      },
+      {
+        "id": "tcp",
+        "name": "TCP",
+        "topics": [
+          "TCP fundamentals",
+          "TCP segment structure",
+          "TCP connection establishment",
+          "Three-way handshake",
+          "Connection termination",
+          "Sequence numbers",
+          "Acknowledgement numbers",
+          "TCP reliability",
+          "Retransmission",
+          "Timeout",
+          "Flow control",
+          "Sliding window",
+          "Receiver window",
+          "Congestion control",
+          "Congestion window",
+          "Slow start",
+          "Congestion avoidance",
+          "Fast retransmit",
+          "Fast recovery",
+          "TCP performance problems"
+        ]
+      },
+      {
+        "id": "socket-api",
+        "name": "Socket API",
+        "topics": [
+          "Socket fundamentals",
+          "Client-server communication",
+          "Socket creation",
+          "Bind",
+          "Listen",
+          "Accept",
+          "Connect",
+          "Send and receive",
+          "Close",
+          "TCP socket workflow",
+          "UDP socket workflow",
+          "Socket API concepts"
+        ]
+      },
+      {
+        "id": "application-layer",
+        "name": "Application Layer",
+        "topics": [
+          "Application layer principles",
+          "Client-server model",
+          "Domain Name System",
+          "DNS hierarchy",
+          "DNS resolution",
+          "Recursive and iterative queries",
+          "DNS records",
+          "HTTP fundamentals",
+          "HTTP request and response",
+          "HTTP methods",
+          "Status codes",
+          "Persistent and non-persistent HTTP",
+          "Basic web communication flow"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "general-aptitude",
+    "name": "General Aptitude",
+    "syllabusGroup": "General Aptitude",
+    "groups": [
+      {
+        "id": "verbal-aptitude",
+        "name": "Verbal Aptitude",
+        "topics": [
+          "English grammar",
+          "Parts of speech",
+          "Subject-verb agreement",
+          "Tenses",
+          "Articles",
+          "Prepositions",
+          "Conjunctions",
+          "Sentence structure",
+          "Error identification",
+          "Sentence completion",
+          "Vocabulary",
+          "Synonyms",
+          "Antonyms",
+          "Contextual vocabulary",
+          "Reading comprehension",
+          "Passage-based questions",
+          "Inference",
+          "Main idea",
+          "Tone and purpose",
+          "Narrative sequencing",
+          "Paragraph arrangement"
+        ]
+      },
+      {
+        "id": "quantitative-aptitude",
+        "name": "Quantitative Aptitude",
+        "topics": [
+          "Number systems",
+          "Integers",
+          "Fractions and decimals",
+          "Ratios and proportions",
+          "Percentages",
+          "Profit and loss",
+          "Simple and compound interest",
+          "Averages",
+          "Mixtures and alligation",
+          "Time and work",
+          "Time, speed and distance",
+          "Powers and exponents",
+          "Logarithms",
+          "Numerical estimation",
+          "Permutations",
+          "Combinations",
+          "Mensuration",
+          "2D geometry",
+          "3D geometry",
+          "Elementary statistics",
+          "Elementary probability"
+        ]
+      },
+      {
+        "id": "analytical-aptitude",
+        "name": "Analytical Aptitude",
+        "topics": [
+          "Deduction",
+          "Induction",
+          "Logical reasoning",
+          "Numerical reasoning",
+          "Analogies",
+          "Pattern recognition",
+          "Data sufficiency",
+          "Argument analysis",
+          "Logical arrangements",
+          "Constraint-based reasoning"
+        ]
+      },
+      {
+        "id": "spatial-aptitude",
+        "name": "Spatial Aptitude",
+        "topics": [
+          "Shape identification",
+          "Shape transformation",
+          "Rotation",
+          "Reflection",
+          "Scaling",
+          "Folding and unfolding",
+          "Paper folding",
+          "Paper cutting",
+          "2D and 3D spatial reasoning",
+          "Pattern completion"
+        ]
+      },
+      {
+        "id": "data-interpretation",
+        "name": "Data Interpretation",
+        "topics": [
+          "Tables",
+          "Bar graphs",
+          "Line graphs",
+          "Pie charts",
+          "Mixed graphs",
+          "Data comparison",
+          "Percentage-based interpretation",
+          "Ratio-based interpretation",
+          "Multi-step data interpretation"
+        ]
+      }
+    ]
+  }
+]
