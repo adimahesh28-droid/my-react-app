@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabase'
+import { loadUserProgress, saveUserProgress } from '../lib/userProgress'
 import { card, fredoka, P, PS, WH, BG, Y } from '../components/ui'
 
 const CAT_SYLLABUS = {
@@ -200,19 +200,29 @@ export default function CatPrep({ session }) {
   const [editingQ,         setEditingQ]         = useState(null)
   const [catLogs,          setCatLogs]          = useState({})
   const [loading,          setLoading]          = useState(true)
+  const [progressError,    setProgressError]    = useState('')
 
   useEffect(() => { loadProgress() }, [])
 
   async function loadProgress() {
-    const { data: { user } } = await supabase.auth.getUser()
-    const saved = user?.user_metadata?.[STORE_KEY] || {}
-    setCatLogs(saved)
-    setLoading(false)
+    try {
+      setCatLogs(await loadUserProgress(userId, STORE_KEY))
+      setProgressError('')
+    } catch (error) {
+      setProgressError(error.message || 'Could not load CAT progress.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function saveProgress(updated) {
     setCatLogs(updated)
-    await supabase.auth.updateUser({ data: { [STORE_KEY]: updated } })
+    try {
+      await saveUserProgress(userId, STORE_KEY, updated)
+      setProgressError('')
+    } catch (error) {
+      setProgressError(error.message || 'Could not save CAT progress.')
+    }
   }
 
   function topicKey(subjectKey, secName, topic) {
@@ -279,6 +289,7 @@ export default function CatPrep({ session }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {progressError && <div role="alert" style={{ background: '#fee2e2', color: '#991b1b', padding: '12px 16px', borderRadius: 12, fontWeight: 700 }}>CAT progress: {progressError}</div>}
 
       {/* Header */}
       <div style={{

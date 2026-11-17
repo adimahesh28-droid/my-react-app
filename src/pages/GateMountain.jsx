@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { supabase } from '../lib/supabase'
+import { loadUserProgressKeys, saveUserProgress } from '../lib/userProgress'
 import topicSpec from '../data/gateTopics.json'
 import { P, PL, PS, WH, GS, fredoka } from '../components/ui'
 import './GateMountain.css'
@@ -58,6 +58,7 @@ export default function GateMountain({ session }) {
   const [classFilter, setClassFilter] = useState('all')
   const [notesDraft, setNotesDraft] = useState('')
   const [loaded, setLoaded] = useState(false)
+  const [saveError, setSaveError] = useState('')
   const importRef = useRef(null)
   const activeSubject = subjects[mountainIndex]
   const subjectTopics = activeSubject.groups.flatMap(group => group.topics)
@@ -85,10 +86,12 @@ export default function GateMountain({ session }) {
     async function load() {
       let remote = {}
       try {
-        const { data: { user } } = await supabase.auth.getUser()
-        const metadata = user?.user_metadata || {}
-        remote = { ...(metadata.gate_mountain_os_v1 || {}), ...(metadata.gate_mountain_progress_v2 || {}), ...(metadata[STORAGE_KEY] || {}) }
-      } catch { /* Local storage still supports offline use. */ }
+        const stored = await loadUserProgressKeys(session.user.id, [...OLD_KEYS, STORAGE_KEY])
+        remote = { ...(stored[OLD_KEYS[0]] || {}), ...(stored[OLD_KEYS[1]] || {}), ...(stored[STORAGE_KEY] || {}) }
+        setSaveError('')
+      } catch (error) {
+        setSaveError(error.message || 'Could not sync GATE Mountain progress.')
+      }
       let local = {}
       try {
         local = OLD_KEYS.reduce((merged, key) => ({ ...merged, ...JSON.parse(localStorage.getItem(key) || '{}') }), {})
@@ -119,7 +122,12 @@ export default function GateMountain({ session }) {
   async function save(next) {
     setProgress(next)
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)) } catch { /* Browser storage may be disabled. */ }
-    try { await supabase.auth.updateUser({ data: { [STORAGE_KEY]: next } }) } catch { /* Keep local progress if remote save is unavailable. */ }
+    try {
+      await saveUserProgress(session.user.id, STORAGE_KEY, next)
+      setSaveError('')
+    } catch (error) {
+      setSaveError(error.message || 'Could not sync GATE Mountain progress.')
+    }
   }
   function updateTopic(topic, patch) {
     const next = { ...progress, [topic.id]: { ...blankRecord(topic), ...(progress[topic.id] || {}), ...patch } }
@@ -189,6 +197,7 @@ export default function GateMountain({ session }) {
 
   if (!loaded) return <div style={{ padding: 24, color: '#344054' }}>Loading GATE Mountain…</div>
   return <main className="gate-mountain-page" style={{ color: '#2D2B6B', fontFamily: "'Nunito', Arial, sans-serif" }}>
+    {saveError && <div role="alert" style={{ background: '#fee2e2', color: '#991b1b', padding: '12px 16px', borderRadius: 12, marginBottom: 16, fontWeight: 700 }}>Progress sync: {saveError}</div>}
     <header className="gm-header">
       <div className="gm-topline">
         <div className="gm-title-block">

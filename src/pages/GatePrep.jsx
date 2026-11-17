@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabase'
+import { loadUserProgress, saveUserProgress } from '../lib/userProgress'
 import { card, purpleBubble, fredoka, P, PS, WH, BG } from '../components/ui'
 
 /* ── GATE Syllabus Data ── */
@@ -248,20 +248,30 @@ export default function GatePrep({ session }) {
   const [editingQ,         setEditingQ]         = useState(null)
   const [gateLogs,         setGateLogs]         = useState({}) // { topicKey: { watched, qCount } }
   const [loading,          setLoading]          = useState(true)
+  const [progressError,    setProgressError]    = useState('')
 
-  // ── Load from Supabase user_metadata ─────────────────────────────────────
+  // ── Load progress from its own table, keeping Auth tokens small ───────────
   useEffect(() => { loadProgress() }, [])
 
   async function loadProgress() {
-    const { data: { user } } = await supabase.auth.getUser()
-    const saved = user?.user_metadata?.[STORE_KEY] || {}
-    setGateLogs(saved)
-    setLoading(false)
+    try {
+      setGateLogs(await loadUserProgress(userId, STORE_KEY))
+      setProgressError('')
+    } catch (error) {
+      setProgressError(error.message || 'Could not load GATE progress.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function saveProgress(updated) {
     setGateLogs(updated)
-    await supabase.auth.updateUser({ data: { [STORE_KEY]: updated } })
+    try {
+      await saveUserProgress(userId, STORE_KEY, updated)
+      setProgressError('')
+    } catch (error) {
+      setProgressError(error.message || 'Could not save GATE progress.')
+    }
   }
 
   // ── Helpers ───────────────────────────────────────────────────────────────
@@ -325,6 +335,7 @@ export default function GatePrep({ session }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {progressError && <div role="alert" style={{ background: '#fee2e2', color: '#991b1b', padding: '12px 16px', borderRadius: 12, fontWeight: 700 }}>GATE progress: {progressError}</div>}
       {/* Subject switcher cards */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
         {['DA', 'CS'].map(sk => {
