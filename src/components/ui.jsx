@@ -34,6 +34,17 @@ export const card = {
   boxShadow: `4px 4px 0 ${PS}`,
 }
 
+export function describeError(error) {
+  if (!error) return 'Unknown error'
+  const parts = [error.message]
+  if (error.code) parts.push(`code ${error.code}`)
+  if (error.details) parts.push(error.details)
+  if (error.hint) parts.push(`Hint: ${error.hint}`)
+  if (error.status && error.status !== 400) parts.push(`HTTP ${error.status}`)
+  if (error.status === 400 && !error.code && !error.details && !error.hint) parts.push('HTTP 400 (the server did not provide more details)')
+  return [...new Set(parts.filter(Boolean))].join(' — ')
+}
+
 // ── Mood Ring ─────────────────────────────────────────────
 export function Ring({ pct, size = 110, stroke = 9 }) {
   const r = (size - stroke) / 2
@@ -108,7 +119,7 @@ export function TaskInput({ onAdd, placeholder }) {
       await onAdd(val.trim())
       setVal('')
     } catch (err) {
-      setError(err?.message || 'Could not save. Please try again.')
+      setError(describeError(err) || 'Could not save. Please try again.')
     } finally {
       setSubmitting(false)
     }

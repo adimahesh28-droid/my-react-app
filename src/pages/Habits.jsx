@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
-import { TaskInput, card, yellowBubble, purpleBubble, fredoka, P, G } from '../components/ui'
+import { TaskInput, card, yellowBubble, purpleBubble, fredoka, describeError, P, G } from '../components/ui'
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
@@ -51,7 +51,7 @@ export default function Habits({ session }) {
       supabase.from('habit_logs').select('*').eq('user_id', userId).gte('log_date', last7[0]),
     ])
     if (habitsResult.error || logsResult.error) {
-      setLoadError(habitsResult.error?.message || logsResult.error?.message || 'Could not load habit data.')
+      setLoadError(describeError(habitsResult.error || logsResult.error))
     }
     const hData = habitsResult.data
     const lData = logsResult.data

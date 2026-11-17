@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
-import { Ring, Checkbox, TaskInput, card, yellowBubble, purpleBubble, fredoka, P, Y, AM, GS, G, BG, PS, WH } from '../components/ui'
+import { Ring, Checkbox, TaskInput, card, yellowBubble, purpleBubble, fredoka, describeError, P, Y, AM, GS, G, BG, PS, WH } from '../components/ui'
 
 const DAYS   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
@@ -51,7 +51,7 @@ export default function Dashboard({ session }) {
     try {
       await Promise.all([loadTasks(), loadHabits(), loadHabitLogs(), loadAllTasks()])
     } catch (error) {
-      setLoadError(error.message || 'Could not load your planner data.')
+      setLoadError(describeError(error))
     } finally {
       setLoading(false)
     }
