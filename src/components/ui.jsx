@@ -97,27 +97,41 @@ export function Checkbox({ done, onToggle }) {
 // ── Task Input ────────────────────────────────────────────
 export function TaskInput({ onAdd, placeholder }) {
   const [val, setVal] = useState('')
-  function submit() {
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
+  async function submit(event) {
+    event?.preventDefault()
     if (!val.trim()) return
-    onAdd(val.trim())
-    setVal('')
+    setSubmitting(true)
+    setError('')
+    try {
+      await onAdd(val.trim())
+      setVal('')
+    } catch (err) {
+      setError(err?.message || 'Could not save. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
   return (
-    <div style={{ display: 'flex', gap: 10 }}>
-      <input value={val} onChange={e => setVal(e.target.value)}
-        onKeyDown={e => e.key === 'Enter' && submit()}
-        placeholder={placeholder}
-        style={{
-          flex: 1, fontSize: 15, padding: '11px 16px', borderRadius: 14,
-          border: `2.5px solid ${PS}`, background: BG, color: '#2D2B6B',
-          outline: 'none', fontFamily: "'Nunito','Poppins',sans-serif", fontWeight: 600,
-          boxShadow: `3px 3px 0 ${PS}`,
-        }} />
-      <button onClick={submit} style={{
-        padding: '11px 24px', borderRadius: 14, background: P, color: WH,
-        border: '2.5px solid #1A1560', cursor: 'pointer',
-        ...fredoka, fontSize: 16, boxShadow: '3px 3px 0 #1A1560',
-      }}>Add</button>
+    <div>
+      <form onSubmit={submit} style={{ display: 'flex', gap: 10 }}>
+        <input value={val} onChange={e => { setVal(e.target.value); setError('') }}
+          placeholder={placeholder} disabled={submitting}
+          style={{
+            flex: 1, fontSize: 15, padding: '11px 16px', borderRadius: 14,
+            border: `2.5px solid ${PS}`, background: BG, color: '#2D2B6B',
+            outline: 'none', fontFamily: "'Nunito','Poppins',sans-serif", fontWeight: 600,
+            boxShadow: `3px 3px 0 ${PS}`,
+          }} />
+        <button type="submit" disabled={submitting} style={{
+          padding: '11px 24px', borderRadius: 14, background: P, color: WH,
+          border: '2.5px solid #1A1560', cursor: submitting ? 'wait' : 'pointer',
+          opacity: submitting ? .7 : 1,
+          ...fredoka, fontSize: 16, boxShadow: '3px 3px 0 #1A1560',
+        }}>{submitting ? 'Saving…' : 'Add'}</button>
+      </form>
+      {error && <div role="alert" style={{ marginTop: 10, color: '#b91c1c', fontSize: 14, fontWeight: 700 }}>{error}</div>}
     </div>
   )
 }

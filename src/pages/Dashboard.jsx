@@ -6,7 +6,12 @@ const DAYS   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
 function todayStr() {
-  return new Date().toISOString().split('T')[0]
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+function localDateStr(date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 }
 
 function computeStreak(tasksByDate) {
@@ -14,7 +19,7 @@ function computeStreak(tasksByDate) {
   for (let i = 0; i < 365; i++) {
     const d = new Date()
     d.setDate(d.getDate() - i)
-    const key = d.toISOString().split('T')[0]
+    const key = localDateStr(d)
     const tasks = tasksByDate[key] || []
     if (tasks.length === 0) { if (i === 0) continue; break }
     if (!tasks.every(t => t.done)) { if (i > 0) break; continue }
@@ -33,6 +38,7 @@ export default function Dashboard({ session }) {
   const [habitLogs,   setHabitLogs]   = useState({}) // habitId → bool
   const [tasksByDate, setTasksByDate] = useState({})
   const [loading,     setLoading]     = useState(true)
+  const [loadError,   setLoadError]   = useState('')
 
   // ── Load all data ─────────────────────────────────────
   useEffect(() => {
@@ -41,25 +47,33 @@ export default function Dashboard({ session }) {
 
   async function loadAll() {
     setLoading(true)
-    await Promise.all([loadTasks(), loadHabits(), loadHabitLogs(), loadAllTasks()])
-    setLoading(false)
+    setLoadError('')
+    try {
+      await Promise.all([loadTasks(), loadHabits(), loadHabitLogs(), loadAllTasks()])
+    } catch (error) {
+      setLoadError(error.message || 'Could not load your planner data.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function loadTasks() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('tasks')
       .select('*')
       .eq('user_id', userId)
       .eq('task_date', today)
       .order('created_at', { ascending: true })
+    if (error) throw error
     setTodayTasks(data || [])
   }
 
   async function loadAllTasks() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('tasks')
       .select('task_date, done')
       .eq('user_id', userId)
+    if (error) throw error
     const map = {}
     ;(data || []).forEach(t => {
       if (!map[t.task_date]) map[t.task_date] = []
@@ -69,20 +83,22 @@ export default function Dashboard({ session }) {
   }
 
   async function loadHabits() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('habits')
       .select('*')
       .eq('user_id', userId)
       .order('created_at', { ascending: true })
+    if (error) throw error
     setHabits(data || [])
   }
 
   async function loadHabitLogs() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('habit_logs')
       .select('*')
       .eq('user_id', userId)
       .eq('log_date', today)
+    if (error) throw error
     const map = {}
     ;(data || []).forEach(l => { map[l.habit_id] = l.done })
     setHabitLogs(map)
@@ -90,11 +106,13 @@ export default function Dashboard({ session }) {
 
   // ── Task actions ──────────────────────────────────────
   async function addTask(text) {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('tasks')
       .insert({ user_id: userId, task_date: today, text, done: false })
       .select().single()
-    if (data) setTodayTasks(prev => [...prev, data])
+    if (error) throw error
+    if (!data) throw new Error('The task was not returned after saving.')
+    setTodayTasks(prev => [...prev, data])
   }
 
   async function toggleTask(id, currentDone) {
@@ -129,6 +147,7 @@ export default function Dashboard({ session }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      {loadError && <div role="alert" style={{ background: '#fee2e2', color: '#991b1b', padding: '12px 16px', borderRadius: 12, fontWeight: 700 }}>Could not load planner data: {loadError}</div>}
       {/* Stat row */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr 1fr', gap: 14 }}>
         {/* Date */}

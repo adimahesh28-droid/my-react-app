@@ -8,8 +8,12 @@ function getLastNDays(n) {
   return Array.from({ length: n }, (_, i) => {
     const d = new Date()
     d.setDate(d.getDate() - (n - 1 - i))
-    return d.toISOString().split('T')[0]
+    return toLocalDateStr(d)
   })
+}
+
+function toLocalDateStr(date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 }
 
 function getMonthDays(year, month) {
@@ -17,13 +21,13 @@ function getMonthDays(year, month) {
   const daysInMonth = new Date(year, month + 1, 0).getDate()
   return Array.from({ length: daysInMonth }, (_, i) => {
     const d = new Date(year, month, i + 1)
-    return d.toISOString().split('T')[0]
+    return toLocalDateStr(d)
   })
 }
 
 export default function Habits({ session }) {
   const userId   = session.user.id
-  const today    = new Date().toISOString().split('T')[0]
+  const today    = toLocalDateStr(new Date())
   const last7    = getLastNDays(7)
 
   const now = new Date()
@@ -34,16 +38,23 @@ export default function Habits({ session }) {
   const [habits,    setHabits]    = useState([])
   const [logMap,    setLogMap]    = useState({}) // `${habitId}_${date}` → bool
   const [loading,   setLoading]   = useState(true)
+  const [loadError, setLoadError] = useState('')
 
   useEffect(() => { loadAll() }, [])
   useEffect(() => { loadMonthLogs() }, [viewYear, viewMonth])
 
   async function loadAll() {
     setLoading(true)
-    const [{ data: hData }, { data: lData }] = await Promise.all([
+    setLoadError('')
+    const [habitsResult, logsResult] = await Promise.all([
       supabase.from('habits').select('*').eq('user_id', userId).order('created_at', { ascending: true }),
       supabase.from('habit_logs').select('*').eq('user_id', userId).gte('log_date', last7[0]),
     ])
+    if (habitsResult.error || logsResult.error) {
+      setLoadError(habitsResult.error?.message || logsResult.error?.message || 'Could not load habit data.')
+    }
+    const hData = habitsResult.data
+    const lData = logsResult.data
     setHabits(hData || [])
     const map = {}
     ;(lData || []).forEach(l => { map[`${l.habit_id}_${l.log_date}`] = l.done })
@@ -63,8 +74,10 @@ export default function Habits({ session }) {
   }
 
   async function addHabit(name) {
-    const { data } = await supabase.from('habits').insert({ user_id: userId, name }).select().single()
-    if (data) setHabits(prev => [...prev, data])
+    const { data, error } = await supabase.from('habits').insert({ user_id: userId, name }).select().single()
+    if (error) throw error
+    if (!data) throw new Error('The habit was not returned after saving.')
+    setHabits(prev => [...prev, data])
   }
 
   async function removeHabit(id) {
@@ -99,6 +112,7 @@ export default function Habits({ session }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {loadError && <div role="alert" style={{ background: '#fee2e2', color: '#991b1b', padding: '12px 16px', borderRadius: 12, fontWeight: 700 }}>Could not load habit data: {loadError}</div>}
       <div style={card}>
         <div style={{ ...yellowBubble(20), marginBottom: 16 }}>Add New Habit</div>
         <TaskInput onAdd={addHabit} placeholder="e.g. Morning run, Read 20 pages, Meditate…" />

@@ -11,7 +11,8 @@ function toDateStr(y, m, d) {
 
 export default function Calendar({ session }) {
   const userId = session.user.id
-  const todayStr = new Date().toISOString().split('T')[0]
+  const todayDate = new Date()
+  const todayStr = toDateStr(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate())
 
   const [calMonth,     setCalMonth]     = useState(() => { const d = new Date(); return { y: d.getFullYear(), m: d.getMonth() } })
   const [selectedDay,  setSelectedDay]  = useState(null)
@@ -48,11 +49,13 @@ export default function Calendar({ session }) {
 
   async function addTask(text) {
     if (!selKey) return
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('tasks')
       .insert({ user_id: userId, task_date: selKey, text, done: false })
       .select().single()
-    if (data) setTaskMap(prev => ({ ...prev, [selKey]: [...(prev[selKey] || []), data] }))
+    if (error) throw error
+    if (!data) throw new Error('The task was not returned after saving.')
+    setTaskMap(prev => ({ ...prev, [selKey]: [...(prev[selKey] || []), data] }))
   }
 
   async function toggleTask(id, currentDone) {
